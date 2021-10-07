@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "handlebars": "^4.7.7"
+  },
+  "name": "cube-rubche",
+  "description": "Educational",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Captain-Leftovers/Cube-Rubche.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Captain-Leftovers/Cube-Rubche/issues"
+  },
+  "homepage": "https://github.com/Captain-Leftovers/Cube-Rubche#readme"
+}
