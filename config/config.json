@@ -1,8 +1,10 @@
 {
-    "development": {
-        "PORT": 3000
-    },
-    "production": {
-        "PORT": 5000
-    }
+  "development": {
+    "PORT": 3000,
+    "DB_CONNECTION_STRING": "mongodb://localhost:27017/cubesDb"
+  },
+  "production": {
+    "PORT": 5000,
+    "DB_CONNECTION_STRING": "mongodb://localhost:27017/cubesDb"
+  }
 }
