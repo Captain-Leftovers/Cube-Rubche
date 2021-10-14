@@ -6,8 +6,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "handlebars": "^4.7.7",
-    "mongoose": "^6.0.10",
-    "uniqid": "^5.4.0"
+    "mongoose": "^6.0.10"
   },
   "name": "cube-rubche",
   "description": "Educational",
