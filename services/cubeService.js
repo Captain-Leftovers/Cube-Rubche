@@ -9,12 +9,10 @@ const create = (name, description, imageUrl, difficulty) => {
   return cube.save();
 };
 
-const getAll = () => {
-  return Cube.find({});
-};
+const getAll =() => Cube.find({}).lean();
 
-const search = (search, from, to) => {
-  let result = Cube.cubes.slice();
+const search = async (search, from, to) => {
+  let result = await Cube.find({}).lean();
   if (search) {
     result = result.filter((el) =>
       el.name.toLowerCase().includes(search.toLowerCase())
@@ -28,8 +26,9 @@ const search = (search, from, to) => {
   }
   return result;
 };
-const getOne = (id) => {
-  return Cube.findById(id);
+const getOne = async (id) => {
+  let result = await Cube.findById(id).lean();
+  return result
 };
 const cubeService = {
   create,

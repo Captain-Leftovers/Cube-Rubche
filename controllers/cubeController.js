@@ -6,17 +6,23 @@ const getCreate = (req, res) => {
   res.render("create" /* {layout: "test"} */);
 };
 
-const cubeDetails = (req, res)=>{
-  let cube = cubeService.getOne(req.params.cubeId);
+const cubeDetails = async (req, res)=>{
+  let cube = await cubeService.getOne(req.params.cubeId);
   res.render('details', {...cube})
   // console.log(cube);
   // res.end();
 }
 
-const createCube = (req, res) => {
+const createCube = async (req, res) => {
   let {name, description, imageUrl, difficulty} = req.body;
-  cubeService.create(name, description, imageUrl, difficulty);
+  try{
+  await cubeService.create(name, description, imageUrl, difficulty);
   res.redirect("/");
+  } 
+  catch(error){
+    res.status(400).send(error.message)
+    res.end();
+  }
 };
 router.get("/create", getCreate);
 router.post("/create", createCube);
