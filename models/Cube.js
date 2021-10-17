@@ -8,18 +8,12 @@ const cubeSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true,
-    maxlength: 100,
+    maxlength: 500,
   },
   imageUrl: {
     type: String,
     required: true,
-    // validate: /^https?:\/\//i
-    validate: {
-      function(value) {
-        return /^https?:\/\//i;
-      },
-      message: "image Url is invalid",
-    },
+    validate: /^https?:\/\//i,
   },
   difficulty: {
     type: Number,
