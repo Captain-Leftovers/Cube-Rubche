@@ -5,12 +5,12 @@
     <p><span>Description:</span>{{description}}</p>
     <p><span>Difficulty level:</span> {{difficulty}}</p>
     <a class="btn" href="/">Back</a> 
-    <a class="btn" style="" href="">Attach Accessory</a> 
+    <a class="btn" style="" href="/cube/{{_id}}/accessory/add">Attach Accessory</a> 
   </div>
   <h2>Accessories</h2>
   <div class="accessories">
-      {{#if accessory}}
-        {{#each accessory}}
+      {{#if accessories}}
+        {{#each accessories}}
         {{>accessory}}
         {{/each}}
         {{else}}
