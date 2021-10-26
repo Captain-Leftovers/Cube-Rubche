@@ -12,6 +12,6 @@ router.use("/accessory", accessoryController);
 router.use(aboutController);
 router.use("/auth", authController);
 router.all("*", (req, res) => {
-  res.render("404");
+  res.status(404).render("404");
 });
 module.exports = router;
