@@ -1,13 +1,14 @@
 const Cube = require("../models/Cube");
 const Accessory = require("../models/Accessory");
 const create = (name, description, imageUrl, difficulty) => {
-  let cube = new Cube({
-    name,
-    description,
-    imageUrl,
-    difficulty,
-  });
-  return cube.save();
+  // let cube = new Cube({
+  //   name,
+  //   description,
+  //   imageUrl,
+  //   difficulty,
+  // });
+  return Cube.create({name, description,imageUrl, difficulty})
+  // return cube.save();
 };
 
 const getAll =() => Cube.find({}).lean();

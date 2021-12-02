@@ -11,8 +11,9 @@ router.get('/register', (req,res)=>{
 })
 
 
-router.post('/register', (req,res)=>{
+router.post('/register', async (req,res)=>{
     let {username, password, repeatPassword} = req.body;
-    authService.register(username, password);
+  await authService.register(username, password, repeatPassword);
+  res.redirect('/auth/login')
 })
 module.exports = router;
